@@ -104,7 +104,7 @@ class StudentManager
     }
     public function exit_program()
     {
-        echo "Thaks For Using Our Program, Have A Nice Day 😊";
+        echo "Thanks For Using Our Program, Have A Nice Day 😊";
         exit;
     }
     public function default_case($list)
@@ -142,3 +142,4 @@ class StudentManager
         echo str_repeat($sperator, $repeate) . "\n$massage\n" . str_repeat($sperator, $repeate) . "\n";
     }
 }
+
