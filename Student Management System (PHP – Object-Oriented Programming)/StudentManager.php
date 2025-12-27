@@ -114,7 +114,7 @@ class StudentManager
     public function handelAddingStudent()
     {
         echo "Enter Student Details in this format (id, name, degree) Press enter to previous: ";
-        $student_data = str_replace(" ", "", trim(fgets(STDIN)));
+        $student_data = trim( trim(fgets(STDIN)));
         if (strlen($student_data) == 0) {
             return;
         }
@@ -123,11 +123,11 @@ class StudentManager
             echo "*** Please Enter The Data In Correct Format (id, name, degree). ***\n";
             return;
         }
-        if (is_int($student_data[1])) {
-            echo "Please enter correct name and try again.\n";
+        if (is_numeric($student_data[1]) ||  !str_replace(" ", "", $student_data[1])) {
+            echo "*** Please enter correct name and try again. ***\n";
             return;
         }
-        $this->add_student((string) $student_data[0], (string) $student_data[1], (float) $student_data[2]);
+        $this->add_student((string) trim($student_data[0]), (string) trim($student_data[1]), (float) $student_data[2]);
         return;
     }
     /*
